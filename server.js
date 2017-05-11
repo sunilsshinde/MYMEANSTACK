@@ -9,3 +9,22 @@ app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
 
+app.use(express.static('public')); 
+
+var Meow = mongoose.model('Meow', {
+ text: String
+  });
+
+app.get('/meows',function(req,res,next)
+{
+Meow.find({},function(err,meows){
+return res.json(meows);
+});
+});
+
+app.post('/meows',function(req,res,next)
+{
+    var newMeow
+});
+
+
