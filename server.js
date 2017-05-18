@@ -24,7 +24,20 @@ return res.json(meows);
 
 app.post('/meows',function(req,res,next)
 {
-    var newMeow
+    var newMeow = new Meow({
+      text: req.body.newMeow
+    });
+
+    newMeow.save(function(err){
+return res.send("Added Succsfully!!!");
+    });
+});
+
+app.put('/meows/remove', function(req, res, next){	
+var meowId=req.body.meow._id;		
+		Meow.remove({_id: meowId}, function(err){
+			return res.send("Deleted Successfully");
+	});
 });
 
 

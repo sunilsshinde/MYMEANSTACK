@@ -12,13 +12,13 @@
 </div>
 <div class="col-md-8">
 <div class="new-meow">
-<input type="text" class="form-control" placeholder="new meow">
-<button type="button" class="btn">Submit</button>
+<input type="text" class="form-control"ng-model="newMeow" placeholder="new meow">
+<button type="button" ng-click="submitnewMeow()" class="btn">Submit</button>
 </div>
 <h3 ng-repeat="meow in meows">
     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 {{meow.text}}
-<a><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+<a><span class="glyphicon glyphicon-remove" ng-click="removeMeow(meow)" aria-hidden="true"></span> </a>
 </h3>
 
 
